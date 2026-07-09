@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily IT Wisdom</title>
+
+    <style>
+        body {
+            font-family: Segoe UI, Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .card {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0,0,0,.15);
+        }
+
+        h1 {
+            color: #d71920;
+        }
+
+        .haiku {
+            font-size: 24px;
+            line-height: 1.8;
+            margin: 30px;
+        }
+
+        button {
+            background: #d71920;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Daily IT Wisdom</h1>
+
+    <div id="haiku" class="haiku"></div>
+
+    <button onclick="newWisdom()">
+        Consult the Oracle
+    </button>
+
+</div>
+
+<script>
+
+const wisdom = [
+
+`DNS once again
+Nobody changed anything
+Yet DNS it was`,
+
+`Storage running low
+Warnings sent for many months
+Budget comes today`,
+
+`Printer offline now
+Everybody swears innocence
+Logs reveal the truth`,
+
+`Hyper-V awaits
+VMware fades quietly
+Migration complete`
+
+];
+
+function newWisdom() {
+
+    let random = Math.floor(Math.random() * wisdom.length);
+
+    document.getElementById("haiku").innerText =
+        wisdom[random];
+}
+
+newWisdom();
+
+</script>
+
+</body>
+</html>
